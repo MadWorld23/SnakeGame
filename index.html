@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake - Wrap Mode</title>
+    
+    <!-- Verweis auf das externe CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>SNAKE</h1>
+        
+        <!-- Canvas für das Spielfeld -->
+        <canvas id="gameCanvas" width="500" height="500"></canvas>
+        
+        <div class="info-panel">
+            <div class="info-item">Score: <span id="score">0</span></div>
+            <div class="info-item">High Score: <span id="highScore">0</span></div>
+        </div>
+        
+        <div class="speed-control">
+            <label for="speedSlider">Geschwindigkeit:</label>
+            <input type="range" id="speedSlider" min="1" max="10" value="5">
+            <span id="speedValue">5</span>
+        </div>
+        
+        <div class="controls">
+            <button id="startBtn" class="control-btn btn-primary">Start</button>
+            <button id="resetBtn" class="control-btn btn-secondary">Reset</button>
+        </div>
+        
+        <!-- Mobile Touch Controls -->
+        <div class="mobile-controls">
+            <div></div>
+            <button class="mobile-btn up" ontouchstart="changeDirection('up')" onclick="changeDirection('up')">↑</button>
+            <div></div>
+            <button class="mobile-btn left" ontouchstart="changeDirection('left')" onclick="changeDirection('left')">←</button>
+            <button class="mobile-btn down" ontouchstart="changeDirection('down')" onclick="changeDirection('down')">↓</button>
+            <button class="mobile-btn right" ontouchstart="changeDirection('right')" onclick="changeDirection('right')">→</button>
+        </div>
+        
+        <div class="instructions">
+            Pfeiltasten oder Touch | R = Neustart | Leertaste = Pause<br>
+            <span style="color:#00ff88; font-weight:bold;">TIPP:</span>
+        </div>
+    </div>
+
+    <!-- Verweis auf das externe JS (am Ende des Body für schnelles Laden) -->
+    <script src="assets/script.js"></script>
+</body>
+</html>
